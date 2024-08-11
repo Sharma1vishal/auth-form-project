@@ -1,0 +1,60 @@
+<div class="signup-container">
+    <app-stepper [currentStep]="currentStep"></app-stepper>
+  
+    <ng-container *ngIf="currentStep === 1">
+      <h2>Step 1: Personal Information</h2>
+      <form (ngSubmit)="onContinue()" [formGroup]="step1Form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input id="name" formControlName="name" type="text" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email/Phone Number:</label>
+          <input id="email" formControlName="email" type="text" placeholder="Enter your email or phone number">
+        </div>
+        <div class="form-group">
+          <label for="createPassword">Create Password:</label>
+          <input id="createPassword" formControlName="createPassword" type="password" placeholder="Create a password">
+        </div>
+        <button type="submit">Continue</button>
+      </form>
+    </ng-container>
+  
+    <ng-container *ngIf="currentStep === 2">
+      <h2>Step 2: Additional Information</h2>
+      <form (ngSubmit)="onSubmit()" [formGroup]="step2Form">
+        <div class="form-group">
+          <label for="organization">Organization Name:</label>
+          <input id="organization" formControlName="organization" type="text" placeholder="Enter organization name">
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="designation">Designation:</label>
+          <select id="designation" formControlName="designation">
+            <option value="">Select designation</option>
+            <option *ngFor="let des of designations" [value]="des">{{ des }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="birthdate">Birth Date:</label>
+          <input id="birthdate" formControlName="birthdate" type="date">
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input id="city" formControlName="city" type="text" placeholder="Enter your city">
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode:</label>
+          <input id="pincode" formControlName="pincode" type="text" placeholder="Enter your pincode">
+          <div *ngIf="pincodeError" class="error-message">
+            {{ pincodeError }}
+          </div>
+        </div>
+        <button type="button" (click)="onBack()">Back</button>
+        <button type="submit">Submit</button>
+      </form>
+    </ng-container>
+  </div>
+  

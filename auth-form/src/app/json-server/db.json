@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "e12c",
+      "name": "Vishal",
+      "email": "vishal@gmail.com",
+      "createPassword": "654321",
+      "organization": "Org1",
+      "designation": "Developer",
+      "birthdate": "2002-02-11",
+      "city": "Ghaziabad",
+      "pincode": "201001"
+    },
+    {
+      "id": "02cd",
+      "name": "Vishal Sharma",
+      "email": "8235703533",
+      "createPassword": "vishal",
+      "organization": "Org3",
+      "designation": "Developer",
+      "birthdate": "2004-02-21",
+      "city": "India",
+      "pincode": "201001"
+    }
+  ],
+  "designations": [
+    "Developer",
+    "Manager",
+    "Analyst"
+  ],
+  "allowedOrganizations": [
+    "Org1",
+    "Org2",
+    "Org3"
+  ]
+}
